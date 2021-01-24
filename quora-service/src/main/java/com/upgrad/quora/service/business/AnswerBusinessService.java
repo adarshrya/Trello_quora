@@ -70,7 +70,7 @@ public class AnswerBusinessService {
         }
         return answerEntity;
     }
-
+// implementing deleteAnswer 
     @Transactional(propagation = Propagation.REQUIRED)
     public AnswerEntity deleteAnswer(String authorization, String answerId) throws AuthorizationFailedException, AnswerNotFoundException {
         UserEntity userEntity = authenticationService.validateAuthToken(authorization);
