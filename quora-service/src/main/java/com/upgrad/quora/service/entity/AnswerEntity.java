@@ -43,11 +43,13 @@ public class AnswerEntity implements Serializable {
   private ZonedDateTime date;
 
   @ManyToOne
+  @OnDelete(action=OnDeleteAction.CASCADE)
   @JoinColumn(name = "user_id")
   @NotNull
   private UserEntity user;
 
   @ManyToOne
+  @OnDelete(action=OnDeleteAction.CASCADE)
   @JoinColumn(name = "question_id")
   @NotNull
   private QuestionEntity question;

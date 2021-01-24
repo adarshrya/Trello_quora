@@ -37,6 +37,7 @@ public class UserAuthEntity implements Serializable {
   private String uuid;
 
   @ManyToOne
+  @OnDelete(action=OnDeleteAction.CASCADE)
   @JoinColumn(name = "user_id")
   private UserEntity user;
 
