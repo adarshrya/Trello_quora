@@ -86,7 +86,7 @@ public class AnswerBusinessService {
         }
         return answerEntity;
     }
-
+// implementing getAllAnswersToQuestion
     public List<AnswerEntity> getAllAnswersToQuestion(String authorization, String questionId) throws AuthorizationFailedException, InvalidQuestionException {
         UserEntity userEntity = authenticationService.validateAuthToken(authorization);
         List<AnswerEntity> answerEntity = new ArrayList<AnswerEntity>();
