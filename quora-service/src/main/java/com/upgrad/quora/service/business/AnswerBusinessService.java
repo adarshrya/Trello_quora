@@ -51,7 +51,7 @@ public class AnswerBusinessService {
         }
         return answerEntity;
     }
-
+//implementing editAnswer
     @Transactional(propagation = Propagation.REQUIRED)
     public AnswerEntity editAnswerContent(String authorization, String answerId, String content) throws AuthorizationFailedException, AnswerNotFoundException {
         UserEntity userEntity = authenticationService.validateAuthToken(authorization);
