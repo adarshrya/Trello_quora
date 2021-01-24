@@ -20,7 +20,7 @@ Open CMD run below commands
 git clone https://github.com/adarshrya/Trello_quora.git
 cd Trello_Quora
 mvn clean -Psetup 
-mvn clean install -PskipTest
+mvn clean install -DskipTests
 ```
 Goto http://localhost:8080/api/swagger-ui.html
 
