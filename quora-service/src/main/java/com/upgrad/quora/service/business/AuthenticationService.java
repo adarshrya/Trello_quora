@@ -66,9 +66,11 @@ public class AuthenticationService {
 
   public UserEntity validateAuthToken(String accessToken) throws AuthorizationFailedException {
     UserAuthEntity userAuthEntity = userDao.getUserAuthToken(accessToken);
+    ZonedDateTime currentTime = ZonedDateTime.now();
     if (userAuthEntity == null) {
       throw new AuthorizationFailedException("ATHR-001", "User has not signed in");
-    } else if (userAuthEntity.getLogoutAt() != null) {
+    } else if (userAuthEntity.getLogoutAt() != null || userAuthEntity.getExpiresAt()
+        .isBefore(currentTime)) {
       throw new AuthorizationFailedException("ATHR-002",
           "User is signed out.Sign in first to get user details");
     } else {
