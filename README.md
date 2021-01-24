@@ -18,7 +18,7 @@ Course 5 - Project
 ```
 Open CMD run below commands
 git clone https://github.com/adarshrya/Trello_quora.git
-cd Trello\_Quora
+cd Trello_Quora
 mvn clean -Psetup 
 mvn clean install -PskipTest
 ```
